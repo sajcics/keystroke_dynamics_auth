@@ -33,32 +33,54 @@
         <button id="form_login_button">Login as existing user</button>
         <button id="form_register_button">Register as new user</button>
       </div>
+      <div id="form_can_not_login" class="hide">
+        <img src="./images/invalid_user.gif">
+        <button id="form_try_again">Try again</button>
+      </div>
+      <div id="form_login_valid" class="hide">
+        <img src="./images/valid.gif">
+        <button id="form_try_again">Return</button>
+      </div>
       <b><p id="error_msg"></p></b>
     </div>
 
   </section>
 
   <section class="panel second">
-    <h2 class="heading">How it works</h2>
+    <h2 class="heading">What is keystroke dynamics</h2>
     <p class="content">Keystroke dynamic also called rytham typing that gets timing that is needed
       for typing of personal login data. When password and username is correct, all
       data of typing is compared with timing of genuied user. If typing for every
-      key is approximate to genuied user time then login is valid, otherwise not and user
+      key is approximate to genuied user time then login is valid, otherwise user
       can not pass the login.
     </p>
     <h2 class="heading">Why keystroke dynamics is usefull</h2>
     <p class="content">We are very aware that many users have various unsecure passwords for theirs
-    web accounts but even somebody try to break it or allready found out, the
-    algorithm for keystroke dynamic will know does this user genuied. </p>
+    web accounts but even somebody try to break it or allready found out users login data, the
+    keystroke dynamic will be another authentition that user have to passs. That makes login better secured.</p>
 
     <h2 class="heading">What algorithm is used and how to mesure key times</h2>
-    <p class="content">First we have to have tested data of genuied user, for example genuied user
-      login for 7 times to ensure that we have avarage time for every key that he pressed
-      for his password. Then if password is correct, use distance algorithm, I used Manhattan algorithm,
-      to get time distence of genuide user and current user how tries to login. If that distance is
-      above or below 10% of key avarage time, then this user is impuster.
+    <p class="content">First we have to have tested data of genuied user called samples, for example genuied
+      user have to login for 7 times to ensure that we have average time for every key that he pressed. Time collected are: </p>
+
+    <ul class="">
+      <li>UU (keyup - keyup) - time is mesured between two keys when they are in release state</li>
+      <li>DD (keydown - keydown) - time is mesured between two keys when they are in pressed state</li>
+      <li>DU (keydown - keyup) - time of key's hold time</li>
+      <li>UD (keyup - keydown) - time of key's hold time</li>
+    </ul>
+
+    <h2 class="heading">Algorithm Manhattan distance</h2>
+    <p class="content">If user have 7 keystroke samples saved in database, we can use Manhattan distance algorithm
+      to calculate distance between avarage timings of typing with current. Formula is:
+      <img src="./images/manhattan_formula" alt="Manhattan distance formula">
+      where y is a main vector (avarage timings for dd, ud, du, uu), and x is tested vectore (current of login).
+      If distance of two vectores are below or above 35 ms, then user is impuster, otherwise genuide.
     </p>
-    <p></p>
+  </section>
+  <section class="panel third">
+    <p>Source code available on Github: <b>ssajcic</b> </p>
+
   </section>
 </body>
 </html>

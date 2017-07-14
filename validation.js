@@ -24,6 +24,11 @@ $(document).on("keydown", "#form_password", function(event){
   }
 })
 
+$(document).on("click","#form_try_again", function(event) {
+  showFormHolder()
+  event.preventDefault()
+} )
+
 $( document ).ready(function () {
   $("#form_login_button").unbind("click").bind("click", function() {
     let userName = $("#form_username").val();
@@ -36,10 +41,12 @@ $( document ).ready(function () {
 
 
         sendAjax("POST", "calculation", {id: result.id, data: jsonData}, (result2) => {
-          if(result2.success === "true")  $("#error_msg").text("Sample saved")
-          else if(result2.success === "valid") $("#error_msg").text("Passed auth!")
-          else if(result2.success === "not valid") $("#error_msg").text("You SHALL NOT PASS!")
+          if(result2.success === "true") $("#error_msg").text("Sample saved")
+          else if(result2.success === "valid") showSuccessMsg()
+          else if(result2.success === "not valid") showErrorMsg()
           else  $("#error_msg").text("Something went wrong!")
+
+          removeValuesFromForm()
         })
       } else {
         $("#error_msg").text("You have entered invalid data. Please try again.")
@@ -76,6 +83,31 @@ function returnNewTemplate() {
   return template;
 }
 
+function showSuccessMsg() {
+  $("#error_msg").text("")
+  $("#form_holder").addClass("hide")
+  $("#form_login_valid").removeClass("hide")
+  //$("#error_msg").text("Passed auth!")
+}
+
+function showErrorMsg() {
+  $("#error_msg").text("")
+  $("#form_holder").addClass("hide")
+  $("#form_can_not_login").removeClass("hide")
+}
+
+function showFormHolder() {
+  $("#error_msg").text("")
+  $("#form_can_not_login").addClass("hide")
+  $("#form_login_valid").addClass("hide")
+  $("#form_holder").removeClass("hide")
+  removeValuesFromForm()
+}
+
+function removeValuesFromForm() {
+  $("#form_username").val("")
+  $("#form_password").val("")
+}
 
 function sendAjax(aMethod, aUrl, aData, callback) {
   $.ajax({

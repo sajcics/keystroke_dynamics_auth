@@ -8,19 +8,41 @@
     src: url("../fonts/Arimo-Regular.ttf");
 }
 
-.panel {
+li {
+  font-size: 25px;
+}
+
+img {
+  display: block;
+  padding: 15px;
+  margin: auto;
+  min-width: 400px;
+}
+.panel.first {
+  margin-bottom: 400px;
+  background-color: #C14343;
   height: 100%;
   width: 100%;
 }
 
-.panel.first {
-  margin-bottom: 400px;
-  background-color: #C14343;
-}
-
 .panel.second {
   background-color: #f5f5f5;
-  padding: 100px 200px;
+  padding: 100px 400px;
+  font-family: Arimo;
+  font-size: 35px;
+  width: 100%;
+  margin-bottom: 30px;
+  height: auto;
+  overflow: hidden;
+  position: relative !important;
+  left: 0px !important;
+}
+
+.panel.third {
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  padding-bottom: 15px;
 }
 
 .uppercase {
@@ -30,11 +52,13 @@
 .content {
   font-size: 25px;
   padding-bottom: 30px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .heading {
   font-size: 35px;
-  padding: 20px;
+  padding: 20px 0;
 }
 
 .big-heading {
@@ -114,7 +138,7 @@ i {
 	margin-top: 10px;
 }
 
-#form_holder button{
+#form_holder button, button{
   font-family: Arimo;
 	width: 260px;
 	height: 50px;
@@ -138,4 +162,18 @@ i {
 ::-moz-input-placeholder{
    font-family: Arimo;
    color: rgba(255,255,255,0.4);
+}
+
+
+#form_can_not_login {
+
+}
+
+#form_login_valid {
+
+}
+
+.hide {
+  visibility: hidden;
+  display: none;
 }
