@@ -1,0 +1,64 @@
+<html>
+<head>
+  <title>Keystroke dynamics</title>
+  <meta name="author" content="stella sajcic"/>
+  <meta name="project" content="keystroke dynamic source code example"/>
+  <!--jquery library -->
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+  <!-- scroll library -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+
+  <!-- js library-->
+  <script src="scrollAnimation.js"></script>
+  <script src="validation.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <section class="panel first">
+    <div class="center">
+      <div id="title">
+        <h1 class="big-heading">Static keystroke dynamics</h1>
+      </div>
+      <div id="form_holder">
+        <input type="text" id="form_username" placeholder="username">
+        <br>
+        <input type="password" id="form_password" placeholder="password">
+        <br>
+        <button id="form_login_button">Login as existing user</button>
+        <button id="form_register_button">Register as new user</button>
+      </div>
+      <b><p id="error_msg"></p></b>
+    </div>
+
+  </section>
+
+  <section class="panel second">
+    <h2 class="heading">How it works</h2>
+    <p class="content">Keystroke dynamic also called rytham typing that gets timing that is needed
+      for typing of personal login data. When password and username is correct, all
+      data of typing is compared with timing of genuied user. If typing for every
+      key is approximate to genuied user time then login is valid, otherwise not and user
+      can not pass the login.
+    </p>
+    <h2 class="heading">Why keystroke dynamics is usefull</h2>
+    <p class="content">We are very aware that many users have various unsecure passwords for theirs
+    web accounts but even somebody try to break it or allready found out, the
+    algorithm for keystroke dynamic will know does this user genuied. </p>
+
+    <h2 class="heading">What algorithm is used and how to mesure key times</h2>
+    <p class="content">First we have to have tested data of genuied user, for example genuied user
+      login for 7 times to ensure that we have avarage time for every key that he pressed
+      for his password. Then if password is correct, use distance algorithm, I used Manhattan algorithm,
+      to get time distence of genuide user and current user how tries to login. If that distance is
+      above or below 10% of key avarage time, then this user is impuster.
+    </p>
+    <p></p>
+  </section>
+</body>
+</html>

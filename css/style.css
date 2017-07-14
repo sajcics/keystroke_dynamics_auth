@@ -1,0 +1,141 @@
+@font-face {
+    font-family: Pacifico;
+    src: url("../fonts/Pacifico.ttf");
+}
+
+@font-face {
+    font-family: Arimo;
+    src: url("../fonts/Arimo-Regular.ttf");
+}
+
+.panel {
+  height: 100%;
+  width: 100%;
+}
+
+.panel.first {
+  margin-bottom: 400px;
+  background-color: #C14343;
+}
+
+.panel.second {
+  background-color: #f5f5f5;
+  padding: 100px 200px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.content {
+  font-size: 25px;
+  padding-bottom: 30px;
+}
+
+.heading {
+  font-size: 35px;
+  padding: 20px;
+}
+
+.big-heading {
+  font-size: 50px;
+  font-family: Pacifico;
+  color: white;
+}
+
+.center {
+  width: 400px;
+  margin: auto;
+  position: absolute;
+  top: 20%;
+  left: 40%;
+}
+
+.padding-down {
+  margin-bottom: 40px;
+}
+
+i {
+  font-family: Amiro;
+}
+
+#error_msg {
+  position: relative;
+  margin-top: 100%;
+  color: white;
+}
+#title {
+  display: block;
+}
+
+#form_login_button {
+  margin-top: 30px !important;
+}
+
+#form_holder {
+  position: absolute;
+  background: rgba(211,	123,	123, 0.2) !important;
+  padding: 30px;
+  width: 250px;
+  margin: auto;
+  box-shadow: 5px 10px 100px rgba(0,0,0, 0.05);
+}
+
+#form_holder input {
+  background-color: rgba(255,255,255,0.1) !important;
+  font-family: Arimo;
+}
+
+#form_holder input[type=text]{
+  font-family: Arimo;
+  width: 250px;
+	height: 60px;
+	background: transparent;
+	border: 0;
+	border-radius: 1px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 10px;
+}
+
+
+#form_holder input[type=password]{
+  font-family: Arimo;
+	width: 250px;
+	height: 60px;
+	background: transparent;
+	border:0;
+	border-radius: 1px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 10px;
+	margin-top: 10px;
+}
+
+#form_holder button{
+  font-family: Arimo;
+	width: 260px;
+	height: 50px;
+	background: rgba(255,255,255, .9);
+	border: 1px solid rgba(255,255,255, .8);
+	cursor: pointer;
+	border-radius: 20px;
+	font-size: 15px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 10px;
+  color: #C14343;
+  font-weight: bold;
+}
+
+::-webkit-input-placeholder{
+   font-family: Arimo;
+   color: rgba(255,255,255,0.4);
+}
+
+::-moz-input-placeholder{
+   font-family: Arimo;
+   color: rgba(255,255,255,0.4);
+}
